@@ -46,7 +46,9 @@ def boxes_iou(box1, box2):
     union_area = area_box1 + area_box2 - intersection_area
     
     # Calculate the IOU
-    iou = intersection_area/union_area
+    if union_area == 0:
+        return 0.0
+    iou = intersection_area / union_area
     
     return iou
 
